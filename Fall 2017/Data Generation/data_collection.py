@@ -5,6 +5,10 @@ import sys
 import os
 from time import sleep
 
+plt.switch_backend("Qt5Agg")
+plt.plot([1,2,3,4,5])
+plt.show()
+
 #filename="trial1.png"
 
 try:
