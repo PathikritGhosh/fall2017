@@ -48,14 +48,14 @@ class charWindow(QWidget):
         print("Labelling Begins")
         
     def done_save(self):
-        filename = sys.argv[1]
-        image = plt.imread(filename)
-        os.remove(filename)
+        filename, extension = sys.argv[1].split('.')
+        image = plt.imread(filename+"."+extension)
+        os.remove(filename+"."+extension)
         for check in self.checks:
             if check.checkState():
                 filename = filename + "|" + str(ord(check.text()))
-        print("SAVING", filename)
-        plt.imsave(arr = image, fname = filename)
+        print("SAVING", filename+"."+extension)
+        plt.imsave(arr = image, fname = filename+"."+extension)
         print("DONE")
         QCoreApplication.instance().quit()
         print("DONE2")
