@@ -45,9 +45,9 @@ def check_save(ax):
         if y_lims[0]<0:
             y_lims[0] = 0
         image = image[int(np.ceil(y_lims[0])):int(np.ceil(y_lims[1])), int(np.ceil(x_lims[0])):int(np.ceil(x_lims[1]))]
-        #print("SAVING", filename+"|"+str(counter)+"."+extension)
-        plt.imsave(arr = image, fname = filename+"|"+str(counter)+"."+extension)
-        os.system("python3 qt_char_select.py " + "\"" + filename+"|"+str(counter) + "." + extension + "\"")
+        #print("SAVING", filename+"_"+str(counter)+"."+extension)
+        plt.imsave(arr = image, fname = filename+"_"+str(counter)+"."+extension)
+        os.system("python3 qt_char_select.py " + "\"" + filename+"_"+str(counter) + "." + extension + "\"")
         counter += 1
     else:
         print("Please select a character before ML data saving")

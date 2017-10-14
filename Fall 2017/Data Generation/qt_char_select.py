@@ -41,7 +41,7 @@ class charWindow(QWidget):
         self.grid.addWidget(self.done_button, row, column, row+1, column+1)
         self.done_button.clicked.connect(self.done_save)
         
-        self.window.setWindowTitle("Labelling")
+        self.window.setWindowTitle("Labeling")
         #self.window.setGeometry(300, 300, 250, 150)
         self.window.move(300,300)
         self.window.show()
@@ -53,7 +53,7 @@ class charWindow(QWidget):
         os.remove(filename+"."+extension)
         for check in self.checks:
             if check.checkState():
-                filename = filename + "|" + str(ord(check.text()))
+                filename = filename + "_" + str(ord(check.text()))
         print("SAVING", filename+"."+extension)
         plt.imsave(arr = image, fname = filename+"."+extension)
         print("DONE")
